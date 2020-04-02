@@ -6,8 +6,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.xyjune.dialog.MewDialog;
-import com.xyjune.dialog.base.BaseAlertDialog;
+import com.xyjune.mdialog.MewDialog;
+import com.xyjune.mdialog.base.BaseAlertDialog;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.xyjune.dialog.base;
+package com.xyjune.mdialog.base;
 
 import android.app.Dialog;
 import android.content.Context;

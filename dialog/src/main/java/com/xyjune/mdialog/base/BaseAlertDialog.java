@@ -1,4 +1,4 @@
-package com.xyjune.dialog.base;
+package com.xyjune.mdialog.base;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import com.xyjune.dialog.R;
+import com.xyjune.mdialog.R;
 
 public abstract class BaseAlertDialog<D extends BaseAlertDialog> extends BaseDialog<D> {
 

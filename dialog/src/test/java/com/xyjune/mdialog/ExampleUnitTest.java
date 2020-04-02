@@ -1,4 +1,4 @@
-package com.xyjune.dialog;
+package com.xyjune.mdialog;
 
 import org.junit.Test;
 

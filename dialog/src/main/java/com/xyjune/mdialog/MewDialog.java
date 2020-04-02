@@ -1,4 +1,4 @@
-package com.xyjune.dialog;
+package com.xyjune.mdialog;
 
 import android.content.Context;
 import android.util.TypedValue;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import com.xyjune.dialog.base.BaseAlertDialog;
+import com.xyjune.mdialog.base.BaseAlertDialog;
 
 public class MewDialog extends BaseAlertDialog<MewDialog> {
 
