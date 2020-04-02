@@ -1,6 +1,6 @@
 # MewDialog
 
-<img src="">
+<img src="https://github.com/xyjune-libs/MewDialog/blob/master/documents/demo.jpg">
 
 ## 使用方法
 ```Java
