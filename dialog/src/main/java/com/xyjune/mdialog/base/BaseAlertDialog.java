@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -54,7 +55,6 @@ public abstract class BaseAlertDialog<D extends BaseAlertDialog> extends BaseDia
         createTitle();
         createCenter();
         createBottom();
-
         return mRoom;
     }
 
@@ -82,13 +82,17 @@ public abstract class BaseAlertDialog<D extends BaseAlertDialog> extends BaseDia
         if (content == null) {
             throw new IllegalArgumentException("You must create the view at method " + getClass().getName() + ".createContent()");
         }
+        ScrollView scrollView = new ScrollView(getContext());
         LinearLayout centerLayout = new LinearLayout(getContext());
         centerLayout.setGravity(Gravity.CENTER);
         int padding = dip2px(getContext(), 15);
         centerLayout.setPadding(padding, padding, padding, padding);
         centerLayout.addView(content);
         centerLayout.setMinimumHeight(dip2px(getContext(), 80));
-        mRoom.addView(centerLayout, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        scrollView.addView(centerLayout, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+        layoutParams.weight = 1;
+        mRoom.addView(scrollView, layoutParams);
     }
 
     private void createBottom() {
