@@ -1,13 +1,16 @@
 package com.xyjune.mewdialog;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.xyjune.mdialog.MewDialog;
 import com.xyjune.mdialog.base.BaseAlertDialog;
+import com.xyjune.mdialog.popup.BottomPopupWindow;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,5 +38,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    public void showPopupWindow(View view) {
+        BottomPopupWindow popupWindow = new BottomPopupWindow(this);
+        popupWindow.setContentView(LayoutInflater.from(this).inflate(R.layout.popup, null));
+        popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.popbg));
+        popupWindow.show();
     }
 }
