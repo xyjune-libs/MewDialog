@@ -9,8 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.xyjune.mdialog.MewDialog;
+import com.xyjune.mdialog.TRMenuPopupWindow;
 import com.xyjune.mdialog.base.BaseAlertDialog;
+import com.xyjune.mdialog.bean.MenuItem;
 import com.xyjune.mdialog.popup.BottomPopupWindow;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,5 +50,21 @@ public class MainActivity extends AppCompatActivity {
         popupWindow.setContentView(LayoutInflater.from(this).inflate(R.layout.popup, null));
         popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.popbg));
         popupWindow.show();
+    }
+
+    public void showTopRight(View view) {
+        TRMenuPopupWindow popupWindow = new TRMenuPopupWindow(this);
+        popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.trm_popup_bg));
+        List<MenuItem> list = new ArrayList<>();
+        list.add(new MenuItem(R.drawable.ic_launcher_background, "lalallala"));
+        list.add(new MenuItem(R.drawable.ic_launcher_background, "asfdasfdasfas"));
+        popupWindow.setMenu(list);
+        popupWindow.setOnMenuListener(new TRMenuPopupWindow.OnMenuListener() {
+            @Override
+            public void onMenuItemClick(int position) {
+                Toast.makeText(MainActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+        popupWindow.showAsDropDown(view, 10, 0);
     }
 }
