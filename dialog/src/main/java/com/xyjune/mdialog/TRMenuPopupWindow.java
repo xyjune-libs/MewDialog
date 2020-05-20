@@ -54,6 +54,18 @@ public class TRMenuPopupWindow extends BasePopupWindow {
         }
     }
 
+    public void setTextSize(float size) {
+        if (mTRMenuAdapter != null) {
+            mTRMenuAdapter.setTextSize(size);
+        }
+    }
+
+    public void setTextColor(int color) {
+        if (mTRMenuAdapter != null) {
+            mTRMenuAdapter.setTextColor(color);
+        }
+    }
+
     @Override
     public void showAsDropDown(View anchor, int xoff, int yoff) {
         mRecyclerView.setAdapter(mTRMenuAdapter);

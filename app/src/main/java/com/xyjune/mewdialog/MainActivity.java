@@ -1,5 +1,6 @@
 package com.xyjune.mewdialog;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         list.add(new MenuItem(R.drawable.ic_launcher_background, "lalallala"));
         list.add(new MenuItem(R.drawable.ic_launcher_background, "asfdasfdasfas"));
         popupWindow.setMenu(list);
+        popupWindow.setTextColor(Color.BLUE);
+        popupWindow.setTextSize(14);
         popupWindow.setOnMenuListener(new TRMenuPopupWindow.OnMenuListener() {
             @Override
             public void onMenuItemClick(int position) {
