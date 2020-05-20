@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         popupWindow.setMenu(list);
         popupWindow.setTextColor(Color.BLUE);
         popupWindow.setTextSize(14);
+        popupWindow.setIconColor(Color.BLUE);
         popupWindow.setOnMenuListener(new TRMenuPopupWindow.OnMenuListener() {
             @Override
             public void onMenuItemClick(int position) {

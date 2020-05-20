@@ -19,11 +19,13 @@ public class TRMenuAdapter extends BaseQuickAdapter<MenuItem, BaseViewHolder> {
     private int iconHeight;
     private int textColor;
     private float textSize;
+    private int iconColor;
 
     public TRMenuAdapter(@Nullable List<MenuItem> data) {
         super(R.layout.item_top_right_menu, data);
         iconWidth = -1;
         iconHeight = -1;
+        iconColor = -1;
         textColor = Color.parseColor("#333333");
         textSize = 14;
     }
@@ -38,6 +40,9 @@ public class TRMenuAdapter extends BaseQuickAdapter<MenuItem, BaseViewHolder> {
         }
         if (iconHeight != -1) {
             layoutParams.height = iconHeight;
+        }
+        if (iconColor != -1) {
+            icon.setColorFilter(iconColor);
         }
         icon.setLayoutParams(layoutParams);
         icon.setImageResource(item.getIcon());
@@ -59,6 +64,11 @@ public class TRMenuAdapter extends BaseQuickAdapter<MenuItem, BaseViewHolder> {
 
     public void setTextSize(float size) {
         textSize = size;
+        notifyDataSetChanged();
+    }
+
+    public void setIconColor(int iconColor) {
+        this.iconColor = iconColor;
         notifyDataSetChanged();
     }
 }
