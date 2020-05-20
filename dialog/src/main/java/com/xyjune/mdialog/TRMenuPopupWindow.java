@@ -48,6 +48,12 @@ public class TRMenuPopupWindow extends BasePopupWindow {
         mOnMenuListener = onMenuListener;
     }
 
+    public void setIconSize(int width, int height) {
+        if (mTRMenuAdapter != null) {
+            mTRMenuAdapter.setIconSize(width, height);
+        }
+    }
+
     @Override
     public void showAsDropDown(View anchor, int xoff, int yoff) {
         mRecyclerView.setAdapter(mTRMenuAdapter);
